@@ -144,6 +144,7 @@ add_action( 'widgets_init', 'dollar_art_club_widgets_init' );
  */
 function dollar_art_club_scripts() {
 	wp_enqueue_style( 'dollar-art-club-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style('dac-style', get_template_directory_uri() . '/dac.css', array());
 	wp_style_add_data( 'dollar-art-club-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'dollar-art-club-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -180,4 +181,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

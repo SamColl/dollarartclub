@@ -25,8 +25,12 @@ Author URI: http://tildester.com
   background-color: red;
 
 }
-
-
+#dac-1 {
+  background-color: pink;
+}
+h1 {
+  background-color: red;
+}
 .word {
   opacity: 0;
 }

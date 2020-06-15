@@ -125,7 +125,6 @@ get_header();
 		    <div class="square" id="dac111"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac112"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac113"><a href=""><img src="" alt=""></a></div>
-		    <div class="square" id="dac114"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac115"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac116"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac117"><a href=""><img src="" alt=""></a></div>
@@ -642,7 +641,7 @@ get_header();
 		    <div class="square" id="dac628"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac629"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac630"><a href=""><img src="" alt=""></a></div>
-		    <div class="square where" id="dac631"><a href=""><img src="http://localhost:8888/wp-content/themes/dollarartclub/images/women.png" alt=""></a></div>
+		    <div class="square where" id="dac631"><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/women.png"></a></div>
 		    <div class="square word" id="dac632"><a href=""><img src="" alt=""></a></div>
 		    <div class="square word" id="dac633"><a href=""><img src="" alt=""></a></div>
 		    <div class="square word" id="dac634"><a href=""><img src="" alt=""></a></div>
