@@ -1,0 +1,32 @@
+/*
+Theme Name: Dollar Art Club
+Version: 1.0
+Author: Tildester
+Author URI: http://tildester.com
+*/
+
+
+.grid-container {
+ display: grid;
+ grid-template-columns: repeat(125, 1fr);
+ grid-template-rows: repeat(125, 10px);
+ grid-gap: 0;
+}
+
+.where {
+  grid-area: 6 / 6 / 7 / 9;
+  grid-template-columns: repeat(50, 10px);
+  grid-template-rows: repeat(55, 10px);
+  display: grid;
+
+}
+
+.square:nth-child(2n) {
+  background-color: red;
+
+}
+
+
+.word {
+  opacity: 0;
+}
