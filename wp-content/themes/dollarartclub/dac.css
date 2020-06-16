@@ -25,12 +25,17 @@ Author URI: http://tildester.com
   background-color: red;
 
 }
-#dac-1 {
-  background-color: pink;
-}
-h1 {
-  background-color: red;
+#women {
+  width: auto;
 }
 .word {
   opacity: 0;
+}
+
+/* styles for hero pop up */
+.artist-info {
+  display: none;
+}
+.artist-info:hover {
+  display: default;
 }

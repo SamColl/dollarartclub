@@ -641,7 +641,7 @@ get_header();
 		    <div class="square" id="dac628"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac629"><a href=""><img src="" alt=""></a></div>
 		    <div class="square" id="dac630"><a href=""><img src="" alt=""></a></div>
-		    <div class="square where" id="dac631"><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/women.png"></a></div>
+		    <div class="square where" id="dac631"><a href=""><img id="women" src="<?php echo get_template_directory_uri(); ?>/images/women.png"></a></div>
 		    <div class="square word" id="dac632"><a href=""><img src="" alt=""></a></div>
 		    <div class="square word" id="dac633"><a href=""><img src="" alt=""></a></div>
 		    <div class="square word" id="dac634"><a href=""><img src="" alt=""></a></div>

@@ -181,3 +181,61 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+// Custom post type function for creating artist record
+
+function custom_post_type() {
+
+// Set UI labels for Custom Post Type
+    $labels = array(
+        'name'                => _x( 'Artists', 'Post Type General Name', 'dollarartclub' ),
+        'singular_name'       => _x( 'Artist', 'Post Type Singular Name', 'dollarartclub' ),
+        'menu_name'           => __( 'Artists', 'dollarartclub' ),
+        'parent_item_colon'   => __( 'Parent Artist', 'dollarartclub' ),
+        'all_items'           => __( 'All Artists', 'dollarartclub' ),
+        'view_item'           => __( 'View Artist', 'dollarartclub' ),
+        'add_new_item'        => __( 'Add New Artist', 'dollarartclub' ),
+        'add_new'             => __( 'Add New', 'dollarartclub' ),
+        'edit_item'           => __( 'Edit Artist', 'dollarartclub' ),
+        'update_item'         => __( 'Update Artist', 'dollarartclub' ),
+        'search_items'        => __( 'Search Artist', 'dollarartclub' ),
+        'not_found'           => __( 'Not Found', 'dollarartclub' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'dollarartclub' ),
+    );
+
+// Set other options for Custom Post Type
+
+    $args = array(
+        'label'               => __( 'Artists', 'dollarartclub' ),
+        'description'         => __( 'Artist news and reviews', 'dollarartclub' ),
+        'labels'              => $labels,
+        // Features this CPT supports in Post Editor
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+        // You can associate this CPT with a taxonomy or custom taxonomy.
+        'taxonomies'          => array( 'category' ),
+        /* A hierarchical CPT is like Pages and can have
+        * Parent and child items. A non-hierarchical CPT
+        * is like Posts.
+        */
+        'hierarchical'        => true,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+
+    );
+
+    // Registering your Custom Post Type
+    register_post_type( 'Artists', $args );
+
+}
+
+add_action( 'init', 'custom_post_type', 0 );
