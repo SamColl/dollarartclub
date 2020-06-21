@@ -5,38 +5,24 @@
 
 
 get_header();
-
-
-
 $args = array(
-   'post_type' => 'artists',
-   'post_status' => 'publish',
+'post_type' => 'artists',
+);
 
+$the_query = new WP_Query( $args );
+?>
 
-  );
-
-$arr_posts = new WP_Query( $args ); ?>
 <div class="grid-container">
   <?php
 
-if ( $arr_posts->have_posts() ) :
-
-   while ( $arr_posts->have_posts() ) :
-       $arr_posts->the_post();
+if ( $the_query->have_posts() ) :
+   while ( $the_query->have_posts() ) :
+       $the_query->the_post();
        ?>
-
-       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-          <a class="popup-artist-info" href="<?php echo esc_url(get_permalink() ); ?>">
-        <div class="artist-info">
-          <?php the_post_thumbnail(); ?>
+       <?php $postId = get_the_ID(); ?>
+       <div class="popup" onclick="myFunction()">Click me!
+          <span class="popuptext" id="myPopup">Popup text...</span>
         </div>
-
-
-     </a>
-
-       </article>
-
        <?php
    endwhile;
 endif;

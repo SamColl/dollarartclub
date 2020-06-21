@@ -10,9 +10,13 @@ Author URI: http://tildester.com
  display: grid;
  grid-template-columns: repeat(125, 1fr);
  grid-template-rows: repeat(125, 10px);
- grid-gap: 0;
-}
 
+}
+/* grid areas */
+
+.square1 {
+  grid-area: 1 / 5/ 1 / 5;
+}
 .where {
   grid-area: 6 / 6 / 7 / 9;
   grid-template-columns: repeat(50, 10px);
@@ -38,4 +42,34 @@ Author URI: http://tildester.com
 }
 .artist-info:hover {
   display: default;
+}
+
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
 }
