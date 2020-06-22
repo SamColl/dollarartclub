@@ -53,8 +53,8 @@ Author URI: http://tildester.com
 }
 
 /* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
+.popuptext {
+
   width: 160px;
   background-color: #555;
   color: #fff;
@@ -66,9 +66,13 @@ Author URI: http://tildester.com
 
 }
 
-
+.hide  {
+  visibility: hidden;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
+.show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s

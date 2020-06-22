@@ -20,8 +20,8 @@ if ( $the_query->have_posts() ) :
        $the_query->the_post();
        ?>
        <?php $postId = get_the_ID(); ?>
-       <div class="popup" onclick="myFunction()">
-          <span class="popuptext" id="myPopup">Popup text...</span>
+       <div class="popup" onmouseover="myFunction()" onmouseout="myFunctionOut()">
+          <span class="popuptext hide" id="myPopup"><?php the_title(); ?></span>
         </div>
        <?php
    endwhile;

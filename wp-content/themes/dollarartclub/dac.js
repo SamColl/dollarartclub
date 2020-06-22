@@ -1,5 +1,12 @@
 
 function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
+  jQuery(".popuptext").removeClass("hide");
+    jQuery(".popuptext").addClass("show");
+
+  };
+  function myFunctionOut() {
+      jQuery(".popuptext").removeClass("show");
+      jQuery(".popuptext").addClass("hide");
+
+
+    };
