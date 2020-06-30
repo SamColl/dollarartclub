@@ -52,24 +52,6 @@ Author URI: http://tildester.com
   cursor: pointer;
 }
 
-/* The actual popup (appears on top) */
-.popuptext {
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: relative;
-  z-index: 1;
-  top: 300px;
-  left: 300px;
-}
-.hide {
-    display: none;
-}
-.show {
-  display: block;
-}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */

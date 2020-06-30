@@ -8,7 +8,7 @@ jQuery(document).ready(function($)
   var articles = document.querySelectorAll("article");
 for (var i = 0; i < articles.length; i++) {
     var article = articles[i];
-
+    var modal = article.querySelector(".modal");
     var button = article.querySelector(".featured-img");
     var closeButton = article.querySelector(".close");
 
