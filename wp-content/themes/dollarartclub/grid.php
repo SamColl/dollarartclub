@@ -5,6 +5,7 @@
 
 
 get_header(); ?>
+<div class="container">
 <div class="grid-container">
 
 <?php
@@ -19,11 +20,11 @@ if ( $the_query->have_posts() ) :
        $the_query->the_post();
        ?>
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-         <img class= "featured-img" id="myImg-<?php the_ID(); ?>" src="wp-content/themes/dollarartclub/images/women.png" alt="Snow" style="width:100%;max-width:300px">
+      <article onmouseover="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='block'" onmouseout="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='none'" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+         <div  class= "square" id="square-<?php the_ID(); ?>">
         <!-- modal -->
         <div id="mymodal-<?php the_ID(); ?>>" class="modal">
-          <span class="close">&times;</span>
+
             <img class="modal-content" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
         </div>
       </article>
@@ -34,4 +35,5 @@ if ( $the_query->have_posts() ) :
 endif;
 wp_reset_query(); ?>
 
+</div>
 </div>
