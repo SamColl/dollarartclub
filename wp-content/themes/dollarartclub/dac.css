@@ -15,8 +15,6 @@ Author URI: http://tildester.com
  display: grid;
  grid-template-columns: repeat(125, 1fr);
  grid-template-rows: repeat(125, 10px);
-
-
 }
 
 /* grid areas */
@@ -31,7 +29,10 @@ Author URI: http://tildester.com
   display: grid;
 
 }
-
+.square:nth-child(2n+1),
+article:nth-child(2n+1) {
+  background-color: #f2f2f2;
+}
 
 #women {
   width: auto;
