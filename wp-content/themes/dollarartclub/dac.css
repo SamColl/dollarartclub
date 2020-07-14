@@ -6,10 +6,17 @@ Author URI: http://tildester.com
 */
 
 .container {
-  background-image: url("images/women.png");
-  background-repeat: no-repeat;
-  background-size: auto 55%;
-  background-origin: border-box;
+  width: 100vw;
+  position: fixed;
+  z-index: -100;
+}
+.container video {
+  max-height: 100vh;
+  position: fixed;
+    width: auto;
+    height: auto;
+    z-index: -100;
+
 }
 .grid-container {
  display: grid;
@@ -17,67 +24,48 @@ Author URI: http://tildester.com
  grid-template-rows: repeat(125, 10px);
 }
 
-/* grid areas */
 
-.square1 {
-  grid-area: 1 / 5/ 1 / 5;
-}
-.where {
-  grid-area: 6 / 6 / 7 / 9;
-  grid-template-columns: repeat(50, 10px);
-  grid-template-rows: repeat(55, 10px);
-  display: grid;
-
-}
-.square:nth-child(2n+1),
-article:nth-child(2n+1) {
-  background-color: #f2f2f2;
-}
-
-#women {
-  width: auto;
-}
-.word {
-  opacity: 0;
-}
-
-/* styles for hero pop up */
-.artist-info {
-  display: none;
-}
-.artist-info:hover {
-  display: default;
-}
-
-
-/* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
 
 .modal {
   display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
-
   left: 0;
   top: 0;
   width: 50%; /* Full width */
   height: 50%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: #ffffff80;
-
   float: left;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
+.click-modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 80%; /* Full width */
+  height: 80%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #ffffff80;
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 .modal-content {
   margin: auto;
   display: block;
   width: 80%;
   max-width: 300px;
+}
+.modal-click-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 600px;
+  z-index: 100;
 }

@@ -5,7 +5,14 @@
 
 
 get_header(); ?>
-<div class="container" id="bgContainer">
+<div class="container">
+  <video allowfullscreen autoplay loop
+muted>
+ <source src="/wp-content/themes/dollarartclub/FlickeringWATWALogo.mp4" type="video/mp4">
+ <source src="/wp-content/themes/dollarartclub/FlickeringWATWALogo.mp4" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
 <div class="grid-container">
 
 <?php
@@ -20,11 +27,17 @@ if ( $the_query->have_posts() ) :
        $the_query->the_post();
        ?>
 
-      <article onmouseover="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='block'" onmouseout="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='none'" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <article onclick="document.getElementById('myClickModal-<?php the_ID(); ?>>').style.display='block';
+        document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='none'"
+       onmouseenter="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='block'"
+        onmouseleave="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='none'" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
          <div  class= "square" id="square-<?php the_ID(); ?>">
         <!-- modal -->
+        <div id="myClickModal-<?php the_ID(); ?>>" class="modal">
+          <span onclick="document.getElementById(''myClickModal-<?php the_ID(); ?>>'').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <img class="modal-click-content" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
+        </div>
         <div id="mymodal-<?php the_ID(); ?>>" class="modal">
-
             <img class="modal-content" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
         </div>
       </article>
