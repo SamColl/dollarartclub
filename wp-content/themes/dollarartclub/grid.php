@@ -27,19 +27,33 @@ if ( $the_query->have_posts() ) :
        $the_query->the_post();
        ?>
 
-      <article onclick="document.getElementById('myClickModal-<?php the_ID(); ?>>').style.display='block';
-        document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='none'"
-       onmouseenter="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='block'"
-        onmouseleave="document.getElementById('mymodal-<?php the_ID(); ?>>').style.display='none'" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-         <div  class= "square" id="square-<?php the_ID(); ?>">
+      <article onclick="document.getElementById('myClickModal-<?php the_ID(); ?>').style.display='block';
+        document.getElementById('mymodal-<?php the_ID(); ?>').style.display='none'"
+       onmouseenter="document.getElementById('mymodal-<?php the_ID(); ?>').style.display='block'"
+        onmouseleave="document.getElementById('mymodal-<?php the_ID(); ?>').style.display='none'" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
         <!-- modal -->
-        <div id="myClickModal-<?php the_ID(); ?>>" class="modal">
-          <span onclick="document.getElementById(''myClickModal-<?php the_ID(); ?>>'').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-            <img class="modal-click-content" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
+
+        <div id="myClickModal-<?php the_ID(); ?>" class="click-modal" onmouseenter="document.getElementById('mymodal-<?php the_ID(); ?>').style.display='none'" >
+          <div class="click-modal-content">
+            <header class="click-modal-header">
+                <h1><?php the_title(); ?></h1>
+                <span onclick="event.stopPropagation(); document.getElementById('myClickModal-<?php the_ID(); ?>').style.display='none'"
+                  class="close-button">&times;</span>
+            </header>
+            <div class="bio">
+              <p><?php the_field('bio'); ?></p>
+            </div>
+            <img class="modal-click-img" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
+            <?php the_field('website'); ?>
         </div>
-        <div id="mymodal-<?php the_ID(); ?>>" class="modal">
-            <img class="modal-content" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
+      </div>
+
+        <div id="mymodal-<?php the_ID(); ?>" class="modal">
+          <div class="modal-content">
+            <img class="modal-img" id="img01-<?php the_ID(); ?>" data-id="img01-<?php the_ID();?>" src="<?php the_post_thumbnail_url($post->ID); ?>"/>
         </div>
+      </div>
       </article>
 
 
@@ -1178,5 +1192,5 @@ wp_reset_query(); ?>
 <div class="square" id="dac1129"><a href=""><img src="" alt=""></a></div>
 
 
-</div>
+
 </div>
