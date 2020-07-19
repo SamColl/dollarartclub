@@ -147,7 +147,7 @@ function dollar_art_club_scripts() {
 
 
 	wp_enqueue_style( 'dollar-art-club-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style('dac-style', get_template_directory_uri() . '/dac.css', array());
+	wp_enqueue_style('dac-style', get_template_directory_uri() . '/dac.css', array(), filemtime( get_stylesheet_directory() . '/dac.css' ));
 	wp_style_add_data( 'dollar-art-club-style', 'rtl', 'replace' );
   wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'dollar-art-club-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

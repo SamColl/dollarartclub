@@ -5,6 +5,25 @@ Author: Tildester
 Author URI: http://tildester.com
 */
 
+body {
+  font-family: "Work Sans","HelveticaNeue","Helvetica Neue",sans-serif;
+}
+
+a {
+  color: black;
+
+}
+a:hover {
+  color: black;
+  opacity: 0.6;
+}
+a:focus {
+  opacity: 0.6;
+  color: black;
+}
+a:visited {
+  color: black;
+}
 .container {
   width: 100vw;
   position: fixed;
@@ -24,8 +43,26 @@ Author URI: http://tildester.com
  grid-template-rows: repeat(125, 10px);
 }
 
+#primary-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+#primary-menu ul li {
+  color: black;
+}
+.toggle-nav {
+    padding: 15px;
+    margin: 15px;
+    display: inline-block !important;
+    color: black;
+    transition: color linear 0.15s;
+}
 
-
+.toggle-nav:hover, .toggle-nav.active {
+    text-decoration: none;
+    color: #8D7F68;
+}
 .modal
 {
   display: none; /* Hidden by default */
